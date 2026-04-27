@@ -257,27 +257,27 @@ h1, h2, h3 {
 
 /* IMÁGENES INDIVIDUALES */
 .card-img1 {
-  background: url("img/conito.jpeg") center/cover no-repeat;
+  background: url("img/conito2.jpeg") center/cover no-repeat;
 }
 
 .card-img2 {
-  background: url("img/conito2.jpeg")center/cover no-repeat;
+  background: url("img/sombrero.jpeg")center/cover no-repeat;
 }
 
 .card-img3 {
-  background: url("img/conito3.jpeg") center/cover no-repeat;
+  background: url("img/pilon.jpeg") center/cover no-repeat;
 }
 
 .card-img4 {
-  background: url("img/conito4.jpeg") center/cover no-repeat;
+  background: url("img/pedazo_de_acordeon.jpeg") center/cover no-repeat;
 }
 
 .card-img5 {
-  background: url("img/img5.jpeg") center/cover no-repeat;
+  background: url("img/pilonera.jpeg") center/cover no-repeat;
 }
 
 .card-img6 {
-  background: url("img/img6.jpeg") center/cover no-repeat;
+  background: url("img/conito3.jpeg") center/cover no-repeat;
 }
 
 @media (max-width: 500px) {
