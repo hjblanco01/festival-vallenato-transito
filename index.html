@@ -1,81 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secretaría de Tránsito</title>
+
+  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container-header">
+  <header class="header">
+    <div class="container-header">
 
-    <img src="img/logo.png" alt="Alcaldía de Valledupar" class="logo">
+      <img src="img/logo.png" alt="Alcaldía de Valledupar" class="logo">
 
-    <div class="titulo">
-      <h1>SECRETARIA DE TRANSITO Y TRANSPORTE MUNICIPAL DE VALLEDUPAR</h1>
-      <p>59° FESTIVAL DE LA LEYENDA VALLENATA 2026 </p>
+      <div class="titulo">
+        <h1>SECRETARIA DE TRANSITO Y TRANSPORTE MUNICIPAL DE VALLEDUPAR</h1>
+        <p>59° FESTIVAL DE LA LEYENDA VALLENATA 2026</p>
+      </div>
+
+      <a href="mapa.html" class="btn-mapa">🗺️ Mapa Interactivo</a>
+
     </div>
 
-    <!-- BOTÓN -->
-    <a href="mapa.html" class="btn-mapa">
-      🗺️ Mapa Interactivo
-    </a>
+    <div class="bandera"></div>
+  </header>
 
-  </div>
+  <section class="agenda">
+    <h2 class="titulo-seccion">📅 PROGRAMACIÓN FESTIVAL VALLENATO</h2>
 
-  <div class="bandera"></div>
-</header>
+    <div class="grid">
 
+      <!-- CARD -->
+      <div class="card card-img1">
+        <h4>Abril</h4>
+        <h3>Lunes 27</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+            <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-<!-- CONTENIDO -->
-<section class="agenda">
-  <h2>📅 PROGRAMACIÓN FESTIVAL VALLENATO</h2>
+      <div class="card card-img2">
+        <h4>Abril</h4>
+        <h3>Martes 28</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+          <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-  <div class="grid">
+      <div class="card card-img3">
+        <h4>Abril</h4>
+        <h3>Miércoles 29</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+          <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-    <a href="pdf/folleto-transito.pdf" target="_blank" class="card card-img1">
-      <h3>Abril</h3>
-      <h3>Lunes 27</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
+      <div class="card card-img4">
+        <h4>Abril</h4>
+        <h3>Jueves 30</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+          <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-    <a href="pdf/martes28.pdf" target="_blank" class="card card-img2">
-      <h3>Abril</h3>
-      <h3>Martes 28</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
+      <div class="card card-img5">
+        <h4>Abril</h4>
+        <h3>Viernes 1</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+          <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-    <a href="pdf/miercoles29.pdf" target="_blank" class="card card-img3">
-      <h3>Abril</h3>
-      <h3>Miércoles 29</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
+      <div class="card card-img6">
+        <h4>Abril</h4>
+        <h3>Sábado 2</h3>
+        <p>📄 Información de movilidad</p>
+        <div class="idiomas">
+          <a href="pdf/es-lunes27.pdf" target="_blank" class="btn-idioma es">🇪🇸 Español</a>
+          <a href="pdf/en-lunes27.pdf" target="_blank" class="btn-idioma en">🇺🇸 English</a>
+        </div>
+      </div>
 
-    <a href="pdf/jueves30.pdf" target="_blank" class="card card-img4">
-      <h3>Abril</h3>
-      <h3>Jueves 30</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
-
-    <a href="pdf/viernes1.pdf" target="_blank" class="card card-img5">
-      <h3>Abril</h3>
-      <h3>Viernes 1</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
-
-    <a href="pdf/sabado2.pdf" target="_blank" class="card card-img6">
-      <h3>Abril</h3>
-      <h3>Sábado 2</h3>
-      <p>📄 Ver información de movilidad</p>
-    </a>
-
-  </div>
-</section>
+    </div>
+  </section>
 
 </body>
+
 </html>

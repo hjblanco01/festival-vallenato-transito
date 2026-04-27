@@ -1,3 +1,4 @@
+/* VARIABLES */
 :root {
   --azul: #1F5A92;
   --rojo: #C0392B;
@@ -12,42 +13,27 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #eef2f7, #ffffff);
   color: var(--texto);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* HEADINGS */
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
 /* HEADER */
 .header {
   background: var(--blanco);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .container-header {
   max-width: 1100px;
   margin: auto;
-  padding: 12px 20px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* LOGO */
 .logo {
   height: 80px;
-  background: white;
-  padding: 5px;
-  border-radius: 8px;
 }
 
-/* TEXTO HEADER */
 .titulo {
   max-width: 600px;
 }
@@ -56,114 +42,16 @@ h1, h2, h3 {
   margin: 0;
   font-size: clamp(14px, 1.4vw, 18px);
   color: var(--azul);
-  line-height: 1.3;
 }
 
 .titulo p {
   margin: 0;
-  font-size: clamp(12px, 1.2vw, 14px);
-  color: #666;
-  font-weight: 400;
+  font-size: 13px;
 }
 
-/* Línea bandera */
 .bandera {
   height: 4px;
-  background: linear-gradient(to right, 
-    var(--azul), 
-    var(--blanco), 
-    var(--rojo)
-  );
-}
-
-/* SECCIÓN */
-.agenda {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-.agenda h2 {
-  margin-bottom: 50px;
-  color: var(--azul);
-  font-size: clamp(22px, 2vw, 28px);
-  letter-spacing: 0.5px;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  text-decoration: none;
-  color: var(--texto);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  border-top: 5px solid var(--azul);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efecto luz */
-.card::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  top: 0;
-  left: -120%;
-  transition: 0.6s;
-}
-
-.card:hover::before {
-  left: 100%;
-}
-
-/* Hover */
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-  background: var(--azul);
-  color: var(--blanco);
-}
-
-/* TÍTULOS */
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-/* TEXTO */
-.card p {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* Flecha */
-.card::after {
-  content: "→";
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
-  font-size: 18px;
-  opacity: 0.5;
-}
-
-/* Alternar colores */
-.card:nth-child(2),
-.card:nth-child(4),
-.card:nth-child(6) {
-  border-top-color: var(--rojo);
+  background: linear-gradient(to right, var(--azul), white, var(--rojo));
 }
 
 /* BOTÓN MAPA */
@@ -174,128 +62,145 @@ h1, h2, h3 {
   padding: 10px 16px;
   border-radius: 10px;
   text-decoration: none;
+}
 
+/* SECCIÓN */
+.agenda {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* TITULO MEJORADO */
+.titulo-seccion {
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: var(--azul);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARDS */
+.card {
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  min-height: 200px;
   display: flex;
-  align-items: center;
-  gap: 6px;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  font-size: clamp(12px, 1.2vw, 14px);
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* OVERLAY */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+/* TEXTO */
+.card h4,
+.card h3,
+.card p,
+.idiomas {
+  position: relative;
+  z-index: 2;
+}
+
+.card h4 {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.card h3 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+/* BOTONES IDIOMA */
+.idiomas {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-idioma {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
   font-weight: 500;
-
-  white-space: nowrap;
   transition: 0.3s;
 }
 
-.btn-mapa:hover {
-  background: var(--rojo);
-  transform: translateY(-2px);
+.btn-idioma.es {
+  background: var(--azul);
 }
 
-/* ===================== */
-/* RESPONSIVE REAL       */
-/* ===================== */
+.btn-idioma.en {
+  background: var(--rojo);
+}
 
+.btn-idioma:hover {
+  transform: scale(1.05);
+}
+
+/* IMÁGENES */
+.card-img1 { background: url("img/conito2.jpeg") center/cover; }
+.card-img2 { background: url("img/sombrero.jpeg") center/cover; }
+.card-img3 { background: url("img/pilon.jpeg") center/cover; }
+.card-img4 { background: url("img/pedazo_de_acordeon.jpeg") center/cover; }
+.card-img5 { background: url("img/pilonera.jpeg") center/cover; }
+.card-img6 { background: url("img/conito3.jpeg") center/cover; }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
   .container-header {
     flex-direction: column;
     text-align: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo {
-    height: 60px;
   }
 
   .btn-mapa {
     margin-left: 0;
     width: 100%;
-    justify-content: center;
+    text-align: center;
   }
 
-  .agenda {
-    padding: 50px 15px;
+  .card {
+    min-height: 180px;
   }
-}
-
-/* BASE PARA TODAS LAS CARDS CON IMAGEN */
-.card-img1,
-.card-img2,
-.card-img3,
-.card-img4,
-.card-img5,
-.card-img6 {
-  color: white;
-  position: relative;
-}
-
-/* OVERLAY GLOBAL */
-.card-img1::before,
-.card-img2::before,
-.card-img3::before,
-.card-img4::before,
-.card-img5::before,
-.card-img6::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1;
-}
-
-/* TEXTO ENCIMA */
-.card-img1 h3, .card-img1 p,
-.card-img2 h3, .card-img2 p,
-.card-img3 h3, .card-img3 p,
-.card-img4 h3, .card-img4 p,
-.card-img5 h3, .card-img5 p,
-.card-img6 h3, .card-img6 p {
-  position: relative;
-  z-index: 2;
-}
-
-/* IMÁGENES INDIVIDUALES */
-.card-img1 {
-  background: url("img/conito2.jpeg") center/cover no-repeat;
-}
-
-.card-img2 {
-  background: url("img/sombrero.jpeg")center/cover no-repeat;
-}
-
-.card-img3 {
-  background: url("img/pilon.jpeg") center/cover no-repeat;
-}
-
-.card-img4 {
-  background: url("img/pedazo_de_acordeon.jpeg") center/cover no-repeat;
-}
-
-.card-img5 {
-  background: url("img/pilonera.jpeg") center/cover no-repeat;
-}
-
-.card-img6 {
-  background: url("img/conito3.jpeg") center/cover no-repeat;
 }
 
 @media (max-width: 500px) {
-
-  .agenda h2 {
-    font-size: 20px;
+  .agenda {
+    padding: 40px 15px;
   }
 
   .card {
     padding: 20px;
   }
-
-  .titulo h1 {
-    font-size: 14px;
-  }
-
-  .titulo p {
-    font-size: 11px;
-  }
 }
-
