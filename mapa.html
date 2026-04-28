@@ -14,16 +14,18 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      background: #f8f9fb;
     }
 
     /* BARRA SUPERIOR */
     .top-bar {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       height: 60px;
       padding: 0 15px;
       background: #ffffff;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     .btn-volver {
@@ -33,10 +35,30 @@
       border-radius: 10px;
       text-decoration: none;
       font-size: 14px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: 0.3s;
     }
 
-    /* CONTENEDOR MAPA */
+    .btn-volver:hover {
+      background: #1F5A92;
+    }
+
+    .btn-mapa-full {
+      background: #1F5A92;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+
+    .btn-mapa-full:hover {
+      background: #C0392B;
+    }
+
+    /* CONTENEDOR */
     .mapa-container {
       flex: 1;
       position: relative;
@@ -45,19 +67,59 @@
     /* IFRAME */
     iframe {
       width: 100%;
-      height: 90%; /* 👈 AQUÍ ESTÁ LA CLAVE */
+      height: 88%;
       border: none;
       display: block;
     }
 
-    /* ESPACIO INFERIOR PARA FILTRO */
+    /* ESPACIO PARA FILTRO */
     .espacio-filtro {
-      height: 10%;
-      background: transparent;
+      height: 12%;
+    }
+
+    /* MENSAJE MODERNO */
+    .mensaje {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: rgba(31, 90, 146, 0.9);
+      color: white;
+
+      padding: 10px 16px;
+      border-radius: 30px;
+
+      font-size: 13px;
+      font-weight: 400;
+
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
+
+      z-index: 10;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    /* ANIMACIÓN */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
     }
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
+
       .top-bar {
         height: 50px;
       }
@@ -69,26 +131,59 @@
       .espacio-filtro {
         height: 15%;
       }
+
+      .btn-volver,
+      .btn-mapa-full {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      .mensaje {
+        font-size: 11px;
+        bottom: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="top-bar">
   <a href="index.html" class="btn-volver">← Volver</a>
+
+  <a 
+    href="https://srvansvargweb.ansv.gov.co/portalansv/apps/dashboards/5bd060badf5d44aab7eb215255f925fe" 
+    target="_blank" 
+    class="btn-mapa-full">
+    📍 Ubicación
+  </a>
 </div>
 
+<!-- MAPA -->
 <div class="mapa-container">
 
   <iframe 
     src="https://srvansvargweb.ansv.gov.co/portalansv/apps/dashboards/5bd060badf5d44aab7eb215255f925fe"
+    allow="geolocation"
     allowfullscreen>
   </iframe>
+
+  <div class="mensaje">
+    📍 Activa tu ubicación o usa el botón azul
+  </div>
 
   <div class="espacio-filtro"></div>
 
 </div>
+
+<!-- AUTO OCULTAR MENSAJE -->
+<script>
+  setTimeout(() => {
+    const msg = document.querySelector('.mensaje');
+    if (msg) msg.style.display = 'none';
+  }, 4000);
+</script>
 
 </body>
 </html>
